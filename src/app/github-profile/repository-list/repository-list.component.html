@@ -1,0 +1,24 @@
+<ul
+  class="flex flex-wrap items-center justify-center mx-10 mt-10 text-sm font-medium"
+>
+  <li *ngFor="let i of repositories">
+    <div
+      class="max-w-sm mr-8 p-6 bg-white border border-gray-200 rounded-lg shadow"
+    >
+      <a href="#">
+        <h5 class="mb-2 text-2xl tracking-tight text-gray-900">{{ i.name }}</h5>
+      </a>
+      <p class="mb-3 font-normal text-gray-700">{{ i.description }}</p>
+      <ul class="flex flex-wrap text-sm font-medium text-center">
+        <li *ngFor="let item of i.topics">
+          <a
+            href="https://github.com/topics/{{ item }}"
+            class="inline-block items-center mr-3 px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
+          >
+            {{ item }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </li>
+</ul>
